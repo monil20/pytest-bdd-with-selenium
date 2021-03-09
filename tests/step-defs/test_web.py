@@ -28,8 +28,8 @@ def search_phrase(browser, phrase):
 
 # Then Steps
 @then(parsers.parse('results are shown for "{phrase}"'))
-def search_results(browser, phrase):
+def search_results(browser, asserts, phrase):
     result_page = DuckDuckGoResultPage(browser)
-    assert result_page.link_div_count() > 0
-    assert result_page.phrase_result_count(phrase) > 0
-    assert result_page.search_input_value() == phrase
+    asserts.assertGreater(result_page.link_div_count(), 0)
+    asserts.assertGreater(result_page.phrase_result_count(phrase), 0)
+    asserts.assertEqual(result_page.search_input_value(), phrase)
