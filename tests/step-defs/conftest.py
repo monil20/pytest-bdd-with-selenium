@@ -4,6 +4,7 @@ This module contains shared fixtures for web UI tests.
 
 import json
 import pytest
+import unittest
 
 from selenium.webdriver import Chrome, Firefox
 
@@ -35,6 +36,11 @@ def config_browser(config):
 def config_wait_time(config):
     # Validate and return the wait time from the config data
     return config["wait_time"] if "wait_time" in config else DEFAULT_WAIT_TIME
+
+
+@pytest.fixture
+def asserts():
+    return unittest.TestCase()
 
 
 @pytest.fixture
