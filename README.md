@@ -28,6 +28,12 @@ Install the dependencies by
 pip install -r requirements.txt
 ```
 
+Install chrome and gecko drivers
+
+```sh
+webdrivermanager chrome firefox --linkpath <any executable path in $PATH>
+```
+
 ## Run the test
 
 Run the sanity test either by
