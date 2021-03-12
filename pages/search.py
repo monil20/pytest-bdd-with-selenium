@@ -5,16 +5,14 @@ the page object for the DuckDuckGo search page.
 
 from selenium.webdriver.common.by import By
 from selenium.webdriver.common.keys import Keys
+from pages.base_page import BasePage
 
 
-class DuckDuckGoSearchPage:
+class DuckDuckGoSearchPage(BasePage):
 
     URL = "https://www.duckduckgo.com"
 
     SEARCH_INPUT = (By.ID, "search_form_input_homepage")
-
-    def __init__(self, browser):
-        self.browser = browser
 
     def load(self):
         self.browser.get(self.URL)
